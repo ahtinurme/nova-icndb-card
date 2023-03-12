@@ -22,7 +22,6 @@ class CardServiceProvider extends ServiceProvider
 
         Nova::serving(function () {
             Nova::script('nova-icndb-card', __DIR__.'/../dist/js/card.js');
-            Nova::style('nova-icndb-card', __DIR__.'/../dist/css/card.css');
         });
     }
 

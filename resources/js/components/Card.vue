@@ -18,13 +18,10 @@ export default {
             joke: '',
         }
     },
-
     props: ['card'],
-
     mounted() {
         this.getJoke();
     },
-
     methods: {
         getJoke() {
             Nova.request().get('/nova-vendor/nova-icndb-card/random').then(response => {
