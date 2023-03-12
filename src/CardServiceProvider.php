@@ -24,10 +24,6 @@ class CardServiceProvider extends ServiceProvider
             Nova::script('nova-icndb-card', __DIR__.'/../dist/js/card.js');
             Nova::style('nova-icndb-card', __DIR__.'/../dist/css/card.css');
         });
-
-        $this->publishes([
-            __DIR__.'/config/icndb-card.php' => config_path('icndb-card.php'),
-        ]);
     }
 
     /**
@@ -44,15 +40,5 @@ class CardServiceProvider extends ServiceProvider
         Route::middleware(['nova'])
                 ->prefix('nova-vendor/nova-icndb-card')
                 ->group(__DIR__.'/../routes/api.php');
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->mergeConfigFrom(__DIR__.'/config/icndb-card.php', 'icndb-card');
     }
 }
