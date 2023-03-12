@@ -18,7 +18,7 @@ class NovaIcndbCard extends Card
      *
      * @return string
      */
-    public function component()
+    public function component(): string
     {
         return 'nova-icndb-card';
     }
