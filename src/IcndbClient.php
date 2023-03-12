@@ -36,7 +36,7 @@ class IcndbClient
 
         $body = json_decode($resp, false, 512, JSON_THROW_ON_ERROR);
 
-        if ($body->type !== 'success') {
+        if (isset($body->value)) {
             throw new APIUnavailableException('API Failed');
         }
 
