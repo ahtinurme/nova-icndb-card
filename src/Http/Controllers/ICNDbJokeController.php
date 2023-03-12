@@ -18,9 +18,7 @@ class ICNDbJokeController
     {
         $url = url()->current();
         if (Str::endsWith($url, 'random')) {
-            $response = $this->icndbClient->random()->get();
-
-            return (count($response) > 0) ? $response->value : '';
+            return $this->icndbClient->get();
         }
         abort(404);
     }
